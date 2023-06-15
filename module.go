@@ -29,7 +29,7 @@ import (
 
 type Module struct{}
 
-func (Module) Startup(ctx context.Context, mono ms.Monolith) (err error) {
+func (Module) Startup(ctx context.Context, mono ms.Microservice) (err error) {
 	container := di.New()
 	// setup Driven adapters
 	container.AddSingleton("registry", func(c di.Container) (any, error) {
