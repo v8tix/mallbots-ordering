@@ -13,7 +13,7 @@ import (
 	"github.com/v8tix/eda/waiter"
 )
 
-type Monolith interface {
+type Microservice interface {
 	Config() config.AppConfig
 	DB() *sql.DB
 	JS() nats.JetStreamContext
@@ -24,5 +24,5 @@ type Monolith interface {
 }
 
 type Module interface {
-	Startup(context.Context, Monolith) error
+	Startup(context.Context, Microservice) error
 }
